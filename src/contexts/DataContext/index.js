@@ -37,6 +37,8 @@ export const DataProvider = ({ children }) => {
       value={{
         data,
         error,
+        last: data && data.events ? data.events[data.events.length - 1]: null,
+        // Retreives the last event and return null if data or data events are missing.
       }}
     >
       {children}
